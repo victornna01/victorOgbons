@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio- Portfolio</title>
+    <title>Dark/Light Mode Toggle</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        (function () {
+      let theme = localStorage.getItem("theme");
+
+      if (theme === "dark") {
+        document.body.classList.add("dark-mode");
+      } else if (theme === "light") {
+        document.body.classList.remove("dark-mode");
+      }
+      // If nothing saved, leave default (light)
+    })();
+    </script>
+
+
+    <!-- Preloader -->
+<div id="preloader">
+  <div class="dots">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">
+                    <img src="logo.png" alt="" class="logo-img">
+                </a>
+                <a href="#home" class="brand-text">Victor Portfolio</a>
+            </div>
+
+            <!-- HAMBURGER MENU (added here, left side) -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- NAV MENU -->
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Toggle Switch -->
+    <div class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+ <!-- Hero Section -->
+<section id="home" class="hero">
+    <!-- Left side: Text -->
+    <div class="hero-left">
+      <h1 id="greeting">Hi, Good <Morning! class=""></Morning!></h1>
+      <h1 class="hero-tittle">I'm Victor <span class="last-name">Ogbonnaya</span>
+      <p class="hero-subtitle">
+        <span class="static-text">I'm Into...</span>
+        <span id="role"></span>
+      </p>
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+
+    
+    <!-- Right side: Robot video -->
+    <div class="hero-right">
+      <video autoplay muted loop playsinline preload="auto" id="robot-video">
+        <source src="robot.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Victor Chigeamezu Ogbonnaya, a passionate web developer and designer with a love for creating innovative digital solutions. With expertise in modern web technologies, I bring ideas to life through clean code and beautiful design.</p>
+                    <p>I specialize in front-end and Back-end development, user experience design, and creating responsive websites that work seamlessly across all devices. My goal is to build digital experiences that are not only visually appealing but also functional and user-friendly.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3><span class="counter" data-target="50">0</span>+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3><span class="counter" data-target="3">0</span>+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3><span class="counter" data-target="100">0</span>%</h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-img-container">
+                        <img src="victor.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- Scroll Button -->
+  <button id="scrollBtn" class="scroll-btn">
+    <i class="fas fa-chevron-down"></i>
+  </button>
+  
+
+    <!-- Skills Section -->
+     
+<section id="skills" class="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid">
+
+    <!-- HTML -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fab fa-html5"></i></div>
+      <h3>HTML5</h3>
+      <div class="skill-bar">
+        <div class="skill-progress html" data-width="80%"></div>
+      </div>
+      <p class="skill-percent">80%</p>
+    </div>
+
+    <!-- CSS -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+      <h3>CSS3</h3>
+      <div class="skill-bar">
+        <div class="skill-progress css" data-width="90%"></div>
+      </div>
+      <p class="skill-percent">90%</p>
+    </div>
+
+    <!-- JavaScript -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+      <h3>JavaScript</h3>
+      <div class="skill-bar">
+        <div class="skill-progress js" data-width="75%"></div>
+      </div>
+      <p class="skill-percent">75%</p>
+    </div>
+
+    <!-- React -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fab fa-react"></i></div>
+      <h3>React</h3>
+      <div class="skill-bar">
+        <div class="skill-progress react" data-width="60%"></div>
+      </div>
+      <p class="skill-percent">60%</p>
+    </div>
+
+    <!-- Node.js -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+      <h3>Node.js</h3>
+      <div class="skill-bar">
+        <div class="skill-progress node" data-width="65%"></div>
+      </div>
+      <p class="skill-percent">65%</p>
+    </div>
+
+    <!-- Database -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fas fa-database"></i></div>
+      <h3>Database</h3>
+      <div class="skill-bar">
+        <div class="skill-progress db" data-width="75%"></div>
+      </div>
+      <p class="skill-percent">75%</p>
+    </div>
+
+    <!-- Python -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fab fa-python"></i></div>
+      <h3>Python</h3>
+      <div class="skill-bar">
+        <div class="skill-progress python" data-width="80%"></div>
+      </div>
+      <p class="skill-percent">80%</p>
+    </div>
+
+    <!-- Tailwind -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fas fa-wind"></i></div>
+      <h3>Tailwind</h3>
+      <div class="skill-bar">
+        <div class="skill-progress tailwind" data-width="60%"></div>
+      </div>
+      <p class="skill-percent">60%</p>
+    </div>
+
+    <!-- Bootstrap -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fab fa-bootstrap"></i></div>
+      <h3>Bootstrap</h3>
+      <div class="skill-bar">
+        <div class="skill-progress bootstrap" data-width="70%"></div>
+      </div>
+      <p class="skill-percent">70%</p>
+    </div>
+
+    <!-- Sass -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fab fa-sass"></i></div>
+      <h3>Sass</h3>
+      <div class="skill-bar">
+        <div class="skill-progress sass" data-width="60%"></div>
+      </div>
+      <p class="skill-percent">60%</p>
+    </div>
+
+    <!-- Kotlin -->
+    <div class="skill-item">
+      <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+      <h3>Kotlin</h3>
+      <div class="skill-bar">
+        <div class="skill-progress kotlin" data-width="50%"></div>
+      </div>
+      <p class="skill-percent">50%</p>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="app">Mobile App</button>
+                <button class="filter-btn" data-filter="ui">UI/UX</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>E-commerce Website</h3>
+                            <p>Modern online store with responsive design</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="app">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Task Management App</h3>
+                            <p>Mobile app for productivity and task tracking</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="ui">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Dashboard UI Design</h3>
+                            <p>Clean and modern dashboard interface</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Corporate Website</h3>
+                            <p>Professional business website with CMS</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="app">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Shopping App</h3>
+                            <p>Mobile shopping application with payment integration</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="ui">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Data visualization and analytics interface</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="projects-gallery">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+          <!-- Project Cards -->
+          <div class="project-card">
+            <img src="super.png" alt="Project 1 Logo">
+            <h3>Super-List</h3>
+            <p>A sleek and minimal productivity tool crafted with UX/UI in mind. Stay organized, share tasks, and keep things flowing – beautifully. 😊</p>
+            <a href="https://www.figma.com/design/9HrruHSrJO2SEeT5VObIOy/superlist?t=RbnpFaybbOCEZ5ID-1" target="_blank" class="btn-view">View Project</a>
+          </div>
+          <div class="project-card">
+            <img src="Mobile.app.png" alt="Project 2 Logo">
+            <h3>Mobile App</h3>
+            <p>A simple and clean task manager designed with UX/UI best practices. Built for speed, clarity, and staying focused on what matters. 😊.</p>
+            <a href="https://www.figma.com/design/FNxC7jHSumB8uh2S5gBya8/Fastop?node-id=151-837&t=etnKELdhpXoQ35Xo-1" target="_blank" class="btn-view">View Project</a>
+          </div>
+          <div class="project-card">
+            <img src="Calculator.png" alt="Project 3 Logo">
+            <h3>Calculator</h3>
+            <p>This project is a simple calculator built using HTML, CSS, and JavaScript. It performs basic arithmetic operations such as addition, subtraction, multiplication, and division. The design is clean and user-friendly, making it easy to use for everyday calculations</p>
+            <a href="calculator.html" target="_blank" class="btn-view">View Project</a>
+          </div>
+          <!-- Add more as needed -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Add this section before the contact section -->
+<!-- Services & Pricing Section -->
+<section id="services" class="services">
+    <div class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Custom responsive websites built with modern technologies</p>
+                <div class="service-price"></div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Responsive Design</li>
+                    <li><i class="fas fa-check"></i> SEO Optimized</li>
+                    <li><i class="fas fa-check"></i> Fast Loading</li>
+                    <li><i class="fas fa-check"></i> Mobile Friendly</li>
+                </ul>
+                <button class="btn btn-primary service-btn" data-service="web-development" data-price="500">Order Now</button>
+            </div>
+            
+            <div class="service-card featured">
+                <div class="featured-badge">Most Popular</div>
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>Beautiful and intuitive user interface designs</p>
+                <div class="service-price"></div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> User Research</li>
+                    <li><i class="fas fa-check"></i> Wireframing</li>
+                    <li><i class="fas fa-check"></i> Prototyping</li>
+                    <li><i class="fas fa-check"></i> Design System</li>
+                </ul>
+                <button class="btn btn-primary service-btn" data-service="ui-ux-design" data-price="300">Order Now</button>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile App</h3>
+                <p>Cross-platform mobile applications</p>
+                <div class="service-price"></div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> iOS & Android</li>
+                    <li><i class="fas fa-check"></i> Native Performance</li>
+                    <li><i class="fas fa-check"></i> App Store Ready</li>
+                    <li><i class="fas fa-check"></i> Maintenance</li>
+                </ul>
+                <button class="btn btn-primary service-btn" data-service="mobile-app" data-price="800">Order Now</button>
+            </div>
+        </div>
+        
+        <!-- Gift Card Section -->
+        <div class="gift-section">
+            <h3>🎁 Give the Gift of Digital Excellence</h3>
+            <p>Purchase a gift card for someone special and let them choose their perfect digital solution!</p>
+            <div class="gift-cards">
+                <div class="gift-card" data-amount="100">
+                    <div class="gift-amount">$200</div>
+                    <p>Perfect for small projects</p>
+                    <button class="btn btn-secondary gift-btn" data-amount="350">Buy Gift Card</button>
+                </div>
+                <div class="gift-card" data-amount="250">
+                    <div class="gift-amount">$500</div>
+                    <p>Great for medium projects</p>
+                    <button class="btn btn-secondary gift-btn" data-amount="250">Buy Gift Card</button>
+                </div>
+                <div class="gift-card" data-amount="1000">
+                    <div class="gift-amount">$1000</div>
+                    <p>Ideal for large projects</p>
+                    <button class="btn btn-secondary gift-btn" data-amount="1000">Buy Gift Card</button>
+                </div>
+                <div class="gift-card custom">
+                    <div class="gift-amount">Custom</div>
+                    <p>Choose your amount</p>
+                    <input type="number" class="custom-amount" placeholder="Enter amount" min="25" max="5000">
+                    <button class="btn btn-secondary custom-gift-btn">Buy Custom Gift Card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Payment Modal -->
+<div id="payment-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modal-title">Complete Your Order</h3>
+            <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="order-summary">
+                <h4>Order Summary</h4>
+                <div class="order-item">
+                    <span id="order-service">Service Name</span>
+                    <span id="order-price">$0</span>
+                </div>
+                <div class="order-total">
+                    <strong>Total: <span id="total-amount">$0</span></strong>
+                </div>
+            </div>
+            
+            <div class="payment-methods">
+                <h4>Choose Payment Method</h4>
+                <div class="payment-options">
+                    <div class="payment-option active" data-method="card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Credit/Debit Card</span>
+                    </div>
+                    <div class="payment-option" data-method="paypal">
+                        <i class="fab fa-paypal"></i>
+                        <span>PayPal</span>
+                    </div>
+                    <div class="payment-option" data-method="crypto">
+                        <i class="fab fa-bitcoin"></i>
+                        <span>Cryptocurrency</span>
+                    </div>
+                    <div class="payment-option" data-method="bank">
+                        <i class="fas fa-university"></i>
+                        <span>Bank Transfer</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card Payment Form -->
+            <div id="card-form" class="payment-form active">
+                <form id="credit-card-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Cardholder Name</label>
+                            <input type="text" id="card-name" placeholder="John Doe" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>Expiry Date</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div class="form-group half">
+                            <label>CVV</label>
+                            <input type="text" id="card-cvv" placeholder="123" maxlength="4" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="billing-email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- PayPal Form -->
+            <div id="paypal-form" class="payment-form">
+                <div class="paypal-info">
+                    <i class="fab fa-paypal paypal-icon"></i>
+                    <p>You will be redirected to PayPal to complete your payment securely.</p>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="paypal-email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Crypto Form -->
+            <div id="crypto-form" class="payment-form">
+                <div class="crypto-info">
+                    <i class="fab fa-bitcoin crypto-icon"></i>
+                    <p>Pay with Bitcoin, Ethereum, or other cryptocurrencies.</p>
+                    <div class="crypto-options">
+                        <div class="crypto-option" data-crypto="btc">
+                            <i class="fab fa-bitcoin"></i>
+                            <span>Bitcoin (BTC)</span>
+                        </div>
+                        <div class="crypto-option" data-crypto="eth">
+                            <i class="fab fa-ethereum"></i>
+                            <span>Ethereum (ETH)</span>
+                        </div>
+                        <div class="crypto-option" data-crypto="ltc">
+                            <i class="fas fa-coins"></i>
+                            <span>Litecoin (LTC)</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="crypto-email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bank Transfer Form -->
+            <div id="bank-form" class="payment-form">
+                <div class="bank-info">
+                    <i class="fas fa-university bank-icon"></i>
+                    <p>Bank transfer details will be provided after order confirmation.</p>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="bank-name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="bank-email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="bank-phone" placeholder="+1 (555) 123-4567" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gift Card Form -->
+            <div id="gift-form" class="payment-form">
+                <div class="gift-info">
+                    <h4>🎁 Gift Card Details</h4>
+                    <div class="form-group">
+                        <label>Recipient Name</label>
+                        <input type="text" id="gift-recipient-name" placeholder="Recipient's Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Recipient Email</label>
+                        <input type="email" id="gift-recipient-email" placeholder="recipient@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="gift-sender-name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Email</label>
+                        <input type="email" id="gift-sender-email" placeholder="your@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Personal Message (Optional)</label>
+                        <textarea id="gift-message" placeholder="Write a personal message..." rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <button class="btn btn-secondary cancel-btn">Cancel</button>
+            <button class="btn btn-primary pay-btn" id="pay-now-btn">
+                <i class="fas fa-lock"></i> Pay Now
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div id="success-modal" class="modal">
+    <div class="modal-content success-content">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>Payment Successful!</h3>
+        <p id="success-message">Your order has been processed successfully.</p>
+        <div class="success-details">
+            <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+            <p><strong>Amount:</strong> <span id="success-amount"></span></p>
+        </div>
+        <button class="btn btn-primary close-success">Continue</button>
+    </div>
+</div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out if you'd like to collaborate or just say hello!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Victornna01@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 8163553275</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Keffi, Nasarawa State, Nigeria</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="php" class="btn btn-primary" >Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- OVERLAY for mobile nav (added before body end) -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+        <!-- Footer -->
+        <footer class="footer">
+                <div class="container">
+                        <p>&copy; 2025 Victor. All rights reserved.</p>
+                </div>
+        </footer>
+
+        <!-- Role typing script (keeps small on-page script for text effect) -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const roles = [
+                    "Creative Web Development",
+                    "UI/UX Design",
+                    "Backend Engineering",
+                    "Fullstack Development"
+                ];
+
+                let roleIndex = 0;
+                let charIndex = 0;
+                const roleElement = document.getElementById("role");
+                const typingSpeed = 100; // ms per character
+                const erasingSpeed = 50; // ms per character
+                const delayBetweenRoles = 2000; // pause before erasing
+
+                function typeRole() {
+                    if (!roleElement) return;
+                    if (charIndex < roles[roleIndex].length) {
+                        roleElement.textContent += roles[roleIndex].charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeRole, typingSpeed);
+                    } else {
+                        setTimeout(eraseRole, delayBetweenRoles);
+                    }
+                }
+
+                function eraseRole() {
+                    if (!roleElement) return;
+                    if (charIndex > 0) {
+                        roleElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+                        charIndex--;
+                        setTimeout(eraseRole, erasingSpeed);
+                    } else {
+                        roleIndex = (roleIndex + 1) % roles.length;
+                        setTimeout(typeRole, typingSpeed);
+                    }
+                }
+
+                typeRole(); // start typing on load
+            });
+        </script>
+
+        <script src="script.js"></script>
+</body>
+</html>
