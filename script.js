@@ -387,6 +387,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+<script>
+  // Reveal sections on scroll
+  const reveals = document.querySelectorAll(".reveal");
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target); // only animate once
+      }
+    });
+  }, { threshold: 0.2 });
+
+  reveals.forEach(reveal => {
+    appearOnScroll.observe(reveal);
+  });
+</script>
+
 // =============================
 // PRELOADER (4 bouncing dots)
 // =============================
