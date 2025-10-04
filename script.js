@@ -387,7 +387,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-<script>
   // Reveal sections on scroll
   const reveals = document.querySelectorAll(".reveal");
 
@@ -403,7 +402,6 @@ document.addEventListener("DOMContentLoaded", () => {
   reveals.forEach(reveal => {
     appearOnScroll.observe(reveal);
   });
-</script>
 
 // =============================
 // PRELOADER (4 bouncing dots)
@@ -416,3 +414,4 @@ window.addEventListener("load", () => {
     }, 1000); // 1s delay before fade out
   }
 });
+
