@@ -25,16 +25,18 @@
     })();
     </script>
 
-
-    <!-- Preloader -->
-<div id="preloader">
-  <div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <!-- =============================
+       PRELOADER
+  ============================== -->
+  <div id="preloader">
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
-</div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -58,7 +60,6 @@
                 <a href="#about" class="nav-link">About</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#projects" class="nav-link">Projects</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -72,6 +73,36 @@
 
  <!-- Hero Section -->
 <section id="home" class="hero">
+    <section id="home" class="hero">
+  <!-- Background videos (do not push layout) -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline class="light-mode-bg">
+      <source src="light.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop playsinline class="dark-mode-bg">
+      <source src="dark.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Your hero text + robot -->
+  <div class="hero-content">
+    <div class="hero-left">
+      <h1>Hi, Good Evening.</h1>
+      <h2>I'm Victor <span>Ogbonnaya</span></h2>
+      <p>I'm Into...</p>
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn">View My Work</a>
+        <a href="#contact" class="btn secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!-- Your robot video -->
+      <video autoplay muted loop playsinline>
+        <source src="robot.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
     <!-- Left side: Text -->
     <div class="hero-left">
       <h1 id="greeting">Hi, Good <Morning! class=""></Morning!></h1>
@@ -88,7 +119,7 @@
 
     
     <!-- Right side: Robot video -->
-    <div class="hero-media">
+    <div class="hero-right">
       <video autoplay muted loop playsinline preload="auto" id="robot-video">
         <source src="robot.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -258,7 +289,7 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-title">Portfolio</h2>
+            <h2 class="section-title">My Portfolio</h2>
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="web">Web Design</button>
@@ -359,41 +390,12 @@
             </div>
         </div>
     </section>
-
-    <!-- Projects Gallery -->
-    <section id="projects" class="projects-gallery">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-grid">
-          <!-- Project Cards -->
-          <div class="project-card">
-            <img src="super.png" alt="Project 1 Logo">
-            <h3>Super-List</h3>
-            <p>A sleek and minimal productivity tool crafted with UX/UI in mind. Stay organized, share tasks, and keep things flowing – beautifully. 😊</p>
-            <a href="https://www.figma.com/design/9HrruHSrJO2SEeT5VObIOy/superlist?t=RbnpFaybbOCEZ5ID-1" target="_blank" class="btn-view">View Project</a>
-          </div>
-          <div class="project-card">
-            <img src="Mobile.app.png" alt="Project 2 Logo">
-            <h3>Mobile App</h3>
-            <p>A simple and clean task manager designed with UX/UI best practices. Built for speed, clarity, and staying focused on what matters. 😊.</p>
-            <a href="https://www.figma.com/design/FNxC7jHSumB8uh2S5gBya8/Fastop?node-id=151-837&t=etnKELdhpXoQ35Xo-1" target="_blank" class="btn-view">View Project</a>
-          </div>
-          <div class="project-card">
-            <img src="Calculator.png" alt="Project 3 Logo">
-            <h3>Calculator</h3>
-            <p>This project is a simple calculator built using HTML, CSS, and JavaScript. It performs basic arithmetic operations such as addition, subtraction, multiplication, and division. The design is clean and user-friendly, making it easy to use for everyday calculations</p>
-            <a href="calculator.html" target="_blank" class="btn-view">View Project</a>
-          </div>
-          <!-- Add more as needed -->
-        </div>
-      </div>
-    </section>
     
     <!-- Add this section before the contact section -->
 <!-- Services & Pricing Section -->
 <section id="services" class="services">
     <div class="container">
-        <h2 class="section-title">Services</h2>
+        <h2 class="section-title">Services & Pricing</h2>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
@@ -401,7 +403,7 @@
                 </div>
                 <h3>Web Development</h3>
                 <p>Custom responsive websites built with modern technologies</p>
-                <div class="service-price"></div>
+                <div class="service-price">Starting at $500</div>
                 <ul class="service-features">
                     <li><i class="fas fa-check"></i> Responsive Design</li>
                     <li><i class="fas fa-check"></i> SEO Optimized</li>
@@ -418,7 +420,7 @@
                 </div>
                 <h3>UI/UX Design</h3>
                 <p>Beautiful and intuitive user interface designs</p>
-                <div class="service-price"></div>
+                <div class="service-price">Starting at $300</div>
                 <ul class="service-features">
                     <li><i class="fas fa-check"></i> User Research</li>
                     <li><i class="fas fa-check"></i> Wireframing</li>
@@ -434,7 +436,7 @@
                 </div>
                 <h3>Mobile App</h3>
                 <p>Cross-platform mobile applications</p>
-                <div class="service-price"></div>
+                <div class="service-price">Starting at $800</div>
                 <ul class="service-features">
                     <li><i class="fas fa-check"></i> iOS & Android</li>
                     <li><i class="fas fa-check"></i> Native Performance</li>
@@ -767,5 +769,4 @@
 
         <script src="script.js"></script>
 </body>
-
 </html>
