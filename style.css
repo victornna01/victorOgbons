@@ -3868,3 +3868,137 @@ body.dark-mode .dark-mode-bg {
   height: auto;
   display: block;
 }
+
+/* Basic navbar alignment */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Hamburger base style */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 1200;
+  transition: all 0.3s ease-in-out;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--text-color);
+  transition: all 0.4s ease;
+  border-radius: 2px;
+}
+
+/* Theme toggle button beside hamburger */
+.theme-toggle {
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* Mobile nav styling */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  /* Shift toggle beside hamburger */
+  .theme-toggle {
+    position: relative;
+    right: 0;
+    margin-left: 15px;
+  }
+
+  /* 🌈 NAV MENU WITH SMOOTH FADE IN/OUT */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100vh;
+  background: var(--bg-color);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.5s ease, opacity 0.4s ease;
+  opacity: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* When menu opens */
+.nav-menu.active {
+  left: 0;
+  opacity: 1;
+  pointer-events: auto;
+  animation: fadeSlideIn 0.4s ease forwards;
+}
+
+/* When menu closes */
+.nav-menu.closing {
+  animation: fadeSlideOut 0.4s ease forwards;
+}
+
+/* Keyframes for smooth animation */
+@keyframes fadeSlideIn {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSlideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+}
+
+  /* Hamburger animation to X */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* Light & Dark Mode Compatibility */
+body.dark-mode .bar {
+  background-color: #fff;
+}
+
+body.dark-mode .nav-menu {
+  background: #121212;
+}
+
+body.dark-mode .nav-link {
+  color: #fff;
+}
+
+body.light-mode .nav-link {
+  color: #000;
+}
