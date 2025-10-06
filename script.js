@@ -139,22 +139,36 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
-// 🍔 Mobile Menu Toggle
+// 🍔 Mobile Menu Toggle (with smooth fade)
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
 const overlay = document.getElementById("overlay");
 
 if (hamburger && navMenu && overlay) {
   hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
+    if (navMenu.classList.contains("active")) {
+      // Smooth close
+      navMenu.classList.add("closing");
+      overlay.classList.remove("active");
+      setTimeout(() => {
+        navMenu.classList.remove("active", "closing");
+      }, 400);
+    } else {
+      // Open menu
+      navMenu.classList.add("active");
+      overlay.classList.add("active");
+    }
     hamburger.classList.toggle("active");
-    overlay.classList.toggle("active");
   });
 
+  // Click overlay to close
   overlay.addEventListener("click", () => {
-    navMenu.classList.remove("active");
+    navMenu.classList.add("closing");
     hamburger.classList.remove("active");
     overlay.classList.remove("active");
+    setTimeout(() => {
+      navMenu.classList.remove("active", "closing");
+    }, 400);
   });
 }
 
@@ -168,13 +182,6 @@ if (robotVideo) {
   robotVideo.muted = true;
   robotVideo.play();
 }
-
-// Close when overlay is clicked
-overlay.addEventListener('click', () => {
-  navMenu.classList.remove('active');
-  hamburger.classList.remove('active');
-  overlay.classList.remove('active');
-});
 
 // Animate skill bars when visible
 const skillSections = document.querySelectorAll('.skill-progress');
