@@ -4002,17 +4002,3 @@ body.dark-mode .nav-link {
 body.light-mode .nav-link {
   color: #000;
 }
-
-/* Align hamburger and theme toggle perfectly */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* space between them */
-}
-
-.hamburger, 
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
