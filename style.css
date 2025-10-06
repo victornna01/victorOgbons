@@ -2363,22 +2363,23 @@ body * {
   font-weight: 600;
 }
 
-/* Right (video side) */
+/* RIGHT (video side) */
+
 .hero-right {
-  flex: 0 0 55%;              /* takes more width for video */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex: 0 0 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-right video {
-  width: 1000px;               /* make video larger */
-  max-width: 100%;            /* keeps it responsive */
-  height: 380px;              /* make box taller */
-  border-radius: 16px;
+  width: 600px;
+  max-width: 900px;   /* wide rectangle */
+  height: 340px;
+  border-radius: 14px;
   object-fit: cover; 
-  background: transparent;
   display: block;
+    background: transparent;
   box-shadow: 0 15px 40px rgba(0,0,0,0.35);
 }
 
@@ -2451,6 +2452,19 @@ body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
 .btn-secondary { border: 2px solid #fff; color: #fff; background: transparent; }
 .btn-secondary:hover { background: #fff; color: #6c5ce7; }
 
+/* Right Video Box */
+.hero-right {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-right video {
+  width: 500px;
+  max-width: 800px;  /* wideness */
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
 
 /* ABOUT SECTION */
 .about {
@@ -2525,297 +2539,30 @@ body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
   .scroll-btn { width: 45px; height: 45px; font-size: 18px; }
 }
 
-/* Logo Image Style */
-.logo-img {
-  height: 80px; /* adjust size to fit your navbar */
-  width: auto;  /* keeps proportions */
-  object-fit: contain;
-  display: circle;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
+/* ================================
+   HERO SECTION - Victor Portfolio
+=================================== */
 
-/* Hover effect for interactivity */
-.logo-img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 10px rgba(108, 92, 231, 0.8)); /* glow effect */
-}
-
-/* Adjust logo + text positioning */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* keeps nice space between logo and text */
-  margin-left: -100px; /* shifts both to the right */
-}
-
-/* Logo image size */
-.nav-logo img {
-  height: 80px;  /* adjust size */
-  width: auto;
-  object-fit: contain;
-}
-
-/* Container for logo + text */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* keeps spacing between logo and text */
-  margin-left: -100px; /* pushes them to the right */
-}
-
-/* Logo image styled as circle with shadow */
-.logo-img {
-  height: 25px;
-  width: 25px;
-  border-radius: 50%; /* makes it a circle */
-  object-fit: cover;  /* makes sure it fills the circle nicely */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* thick shadow border */
-  border: 3px solid #fff; /* optional: adds white border around circle */
-  pointer-events: none; /* makes it non-clickable */
-}
-
-/* For tablets and smaller screens */
-@media (max-width: 768px) {
-  .logo-img {
-    height: 40px;
-    width: 40px;
-  }
-
-  .nav-logo {
-    margin-left: 15px; /* reduce margin on smaller screens */
-    gap: 8px; /* slightly smaller spacing */
-  }
-}
-
-/* For very small phones */
-@media (max-width: 480px) {
-  .logo-img {
-    height: 35px;
-    width: 35px;
-  }
-u
-  .nav-logo a {
-    font-size: 14px; /* make text smaller */
-  }
-}
-
-/* Default desktop styling already exists */
-
-/* Tablet and below */
-@media (max-width: 768px) {
-  .nav-container {
-    display: flex;
-    align-items: center;   /* vertical centering */
-    justify-content: space-between; /* keep logo left, hamburger right */
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;   /* keeps logo + text vertically aligned */
-    gap: 8px;
-    margin-left: 15px;
-  }
-
-  .logo-img {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4); /* shadow border */
-    object-fit: cover;
-  }
-
-  .nav-logo a {
-    font-size: 16px; /* slightly smaller on mobile */
-    color: #fff;
-    font-weight: 600;
-  }
-}
-
-/* Very small phones */
-@media (max-width: 480px) {
-  .logo-img {
-    height: 35px;
-    width: 35px;
-  }
-
-  .nav-logo a {
-    font-size: 14px; /* shrink text */
-  }
-}
-
-#greeting {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #f5f6fa;
-  transition: all 0.5s ease-in-out; /* smooth text change */
-}
-
-.hero-title {
-  white-space: nowrap; /* prevent breaking into 2 lines */
-  font-weight: bold;   /* make bold */
-}
-
-/* Hero container shift */
-.hero-content {
-  text-align: left;       /* Keep texts aligned left */
-  margin-left: -100px;      /* Adjust this value to push to the right */
-}
-
-/* Keep name in one line and bold */
-.hero-name {
-  white-space: nowrap;    /* Prevents breaking into 2 lines */
-  font-weight: bold;      /* Bold only */
-}
-
-.hero-name {
-  white-space: nowrap;      /* Never wrap to the next line */
-  font-weight: bold;        /* Keep bold */
-  font-size: 2.5rem;        /* Same size as before (adjust if needed) */
-  line-height: 1.2;         /* Clean spacing */
-  display: inline-block;    /* Ensure it stays on one line */
-}
-
-@media (max-width: 768px) {
-  .hero-name {
-    font-size: 2rem;       /* Scale down on tablets */
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-name {
-    font-size: 1.6rem;     /* Scale down on phones */
-  }
-}
-
-/* Default hero title */
-.hero-tittle {
-  white-space: nowrap;
-  font-weight: bold;
-  font-size: 2.5rem;
-  line-height: 1.2;
-  display: inline-block;
-  color: #fff; /* stays white normally */
-}
-
-/* Default last name (light mode) */
-.last-name {
-  color: #fff;
-  transition: color 0.3s ease; /* smooth change when switching */
-}
-
-/* Dark mode override */
-body.dark-mode .last-name {
-  color: #6c5ce7; /* purple only in dark mode */
-}
-
-/* Brand text default (light mode) */
-.brand-text {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #000; /* black on light mode */
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-/* Dark mode brand text */
-body.dark-mode .brand-text {
-  color: #6c5ce7; /* purple like Ogbonnaya */
-}
-
-/* Header section styling */
-.header {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* full screen */
-  background: url("light-mode.mp4") no-repeat center center/cover; /* replace with your GIF */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  z-index: 1;
-}
-
-/* Dark mode background */
-body.dark-mode .header {
-  background: url("dark.mp4") no-repeat center center/cover; /* replace with your dark mode GIF */
-}
-
-/* Overlay to make text readable */
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* adds a dark overlay */
-  z-index: -1;
-}
-
-/* Background video styles */
-.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  display: none; /* hidden by default */
-}
-
-/* Light mode shows light video */
-body:not(.dark-mode) .light-mode-bg {
-  display: block;
-}
-
-/* Dark mode shows dark video */
-body.dark-mode .dark-mode-bg {
-  display: block;
-}
-
-/* Ensure hero content stays above video */
 .hero {
   position: relative;
-  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 6rem 0;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10%;
+  color: var(--text-color, #fff);
+  transition: background-color 0.5s ease;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-/* Remove the .mp4 backgrounds */
-.header {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  z-index: 1;
-}
-
-/* Overlay for readability */
-.header::before {
-  content: "";
+/* ---------- Background Videos ---------- */
+.video-background {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 0;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
 }
 
-/* Video backgrounds */
 .bg-video {
   position: absolute;
   top: 0;
@@ -2823,849 +2570,1301 @@ body.dark-mode .dark-mode-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
-  display: none; /* hidden by default */
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
 }
 
-/* Show light video by default */
-body:not(.dark-mode) .light-mode-bg {
-  display: block;
+.light-mode .light-mode-bg {
+  opacity: 1;
 }
 
-/* Show dark video in dark mode */
-body.dark-mode .dark-mode-bg {
-  display: block;
+.dark-mode .dark-mode-bg {
+  opacity: 1;
 }
 
-/* Ensure hero text stays visible */
+/* ---------- Hero Content ---------- */
 .hero-content {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  max-width: 1200px;
   z-index: 2;
-}
-
-.hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  color: #fff;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; /* sends video behind text */
+  gap: 3rem;
 }
 
 .hero-left {
-  position: relative;
-  z-index: 1;
-  padding: 0 50px;
-}
-
-/* Modal headings and labels */
-.modal-content h3,
-.modal-content h4,
-.modal-content label,
-.modal-content span,
-.modal-content p {
-  color: #000 !important;     /* always black */
-  font-weight: bold !important;
-  opacity: 1 !important;      /* remove faint effect */
-}
-
-/* Keep the amounts blue */
-.modal-content .total-amount,
-.modal-content .price {
-  color: #007bff !important;  /* bootstrap primary blue */
-  font-weight: bold !important;
-}
-
-.service-name {
-  color: #000 !important;
-  font-weight: bold !important;
-  opacity: 1 !important;
-}
-
-/* Default (Light Mode) */
-.service-card {
-  border: 2px solid #007bff; /* nice skin-like tone */
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Dark Mode */
-body.dark-mode .service-card {
-  border: 2px solid #444; /* subtle gray line */
-}
-
-/* === Other Projects Section === */
-.projects-gallery {
-  padding: 80px 0;
-  text-align: center;
-}
-
-.projects-gallery .section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-/* Grid layout */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Project Card */
-.project-card {
-  background: var(--card-bg);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--box-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-}
-
-/* Project Image */
-.project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover img {
-  transform: scale(1.05);
-}
-
-/* Content inside card */
-.project-card h3 {
-  font-size: 1.3rem;
-  margin: 15px 0 10px;
-  font-weight: bold;
-}
-
-.project-card p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  padding: 0 15px 15px;
-  line-height: 1.5;
-}
-
-/* View Project Button */
-.project-card .btn-view {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 10px 18px;
-  border-radius: 6px;
-  background: var(--primary);
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.project-card .btn-view:hover {
-  background: #574ae2; /* darker shade of your theme blue */
-  transform: scale(1.05);
-}
-
-/* === Light Mode === */
-body.light-mode .project-card {
-  background: #fff;
-  border: 1px solid #ddd;
-}
-
-/* === Dark Mode === */
-body.dark-mode .project-card {
-  background: #1e1e1e;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Animation states */
-.project-card {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.project-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.project-card {
-  background: #6c5ce7;   /* Purple background */
-  color: #ffffff;        /* White text */
-  padding: 35px 25px;    /* Bigger box */
-  border-radius: 20px;   /* More curvy corners */
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1.05rem;    /* Slightly larger text */
-  font-family: inherit;  /* Same font as other sections */
-  min-height: 20px;     /* Ensures a bigger card */
-}
-
-/* Title inside card */
-.project-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-  font-weight: bold;
-}
-
-/* Description inside card */
-.project-card p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-/* Button inside project card */
-.project-card .btn-view {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #fff;
-  color: #6c5ce7;
-  border-radius: 30px;   /* Rounded button */
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.project-card .btn-view:hover {
-  background: #6c5ce7;
-  color: #fff;
-  border: 1px solid #fff;
-  transform: scale(1.05); /* Slight zoom effect */
-}
-
-/* Hover effect for card */
-.project-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* Dark Mode Support */
-body.dark-mode .project-card {
-  background: #6c5ce7;  /* Keep purple */
-  color: #ffffff;       /* White text */
-}
-
-body.dark-mode .project-card .btn-view {
-  background: #fff;
-  color: #6c5ce7;
-}
-
-body.dark-mode .project-card .btn-view:hover {
-  background: #6c5ce7;
-  color: #fff;
-}
-
-/* Default (Light Mode) */
-.project-card {
-  background: #6c5ce7;
-  padding: 35px 25px;
-  border-radius: 20px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1.05rem;
-  font-family: inherit;
-  min-height: 320px;
-  color: #000000;   /* All text black in light mode */
-}
-
-.project-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-  font-weight: bold;
-  color: #000000;   /* Black header text in light mode */
-}
-
-.project-card p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #000000;   /* Black paragraph text in light mode */
-}
-
-/* Button inside project card */
-.project-card .btn-view {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #1b1b1b;
-  color: #6c5ce7;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.project-card .btn-view:hover {
-  background: #6c5ce7;
-  color: #fff;
-  border: 1px solid #fff;
-  transform: scale(1.05);
-}
-
-/* Hover effect for card */
-.project-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* Dark Mode Support */
-body.dark-mode .project-card {
-  background: #6c5ce7;  
-  color: #ffffff;       /* White text in dark mode */
-}
-
-body.dark-mode .project-card h3,
-body.dark-mode .project-card p {
-  color: #ffffff;       /* White headers + paragraphs in dark mode */
-}
-
-body.dark-mode .project-card .btn-view {
-  background: #fff;
-  color: #6c5ce7;
-}
-
-body.dark-mode .project-card .btn-view:hover {
-  background: #6c5ce7;
-  color: #fff;
-}
-
-/* Project Cards */
-.projects-gallery .project-card {
-  background: black; /* Black in light mode */
-  border-radius: 20px; 
-  padding: 25px;
-  color: #6c5ce7;
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect for card */
-.projects-gallery .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-}
-
-/* Project Titles */
-.projects-gallery .project-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #000; /* Black in light mode */
-  margin: 15px 0;
-}
-
-body.dark-mode .projects-gallery .project-card h3 {
-  color: #6c5ce7; /* purple in dark mode */
-}
-
-/* Project Descriptions */
-.projects-gallery .project-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #000; /* Black in light mode */
-}
-
-body.dark-mode .projects-gallery .project-card p {
-  color: #fff; /* White in dark mode */
-}
-
-/* Buttons inside cards */
-.projects-gallery .btn-view {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-/* Light mode button */
-.projects-gallery .btn-view {
-  background: #fff;
-  color: #6c5ce7;
-  border: 2px solid #34495e; /* darker blue border */
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-}
-
-.projects-gallery .btn-view:hover {
-  background: #34495e;
-  color: #fff;
-}
-
-/* Dark mode button */
-body.dark-mode .projects-gallery .btn-view {
-  background: #f1c40f; /* Yellow */
-  color: #000;
-  border: none;
-  box-shadow: 0 3px 8px rgba(255, 255, 0, 0.3);
-}
-
-body.dark-mode .projects-gallery .btn-view:hover {
-  background: #f39c12; /* darker yellow */
-  color: #fff;
-}
-
-/* Project Cards */
-.projects-gallery .project-card {
-  border-radius: 20px; 
-  padding: 25px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-
-/* Light Mode Styles */
-body.light-mode .projects-gallery .project-card {
-  background: #6c5ce7; /* Blue background */
-  color: #000; /* Black text */
-}
-
-/* Titles in light mode */
-body.light-mode .projects-gallery .project-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #000; /* Bold black headers */
-}
-
-/* Descriptions in light mode */
-body.light-mode .projects-gallery .project-card p {
-  color: #000; /* Black text */
-}
-
-/* Dark Mode Styles */
-body.dark-mode .projects-gallery .project-card {
-  background: #6c5ce7; /* Same blue for dark mode */
-  color: #fff; /* White text */
-}
-
-/* Titles in dark mode */
-body.dark-mode .projects-gallery .project-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff; /* White headers */
-}
-
-/* Descriptions in dark mode */
-body.dark-mode .projects-gallery .project-card p {
-  color: #fff; /* White text */
-}
-
-/* Project Cards Base Style */
-.project-card {
-  background: linear-gradient(145deg, #6c5ce7, #5a4bdc);
-  border-radius: 18px;
-  padding: 25px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-}
-
-/* Titles inside project cards */
-.project-card h3 {
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin: 15px 0;
-  transition: color 0.3s ease;
-}
-
-/* Description text */
-.project-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  transition: color 0.3s ease;
-}
-
-/* Buttons */
-.btn-view {
-  display: inline-block;
-  padding: 10px 22px;
-  border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-/* Light Mode */
-body.light-mode .project-card h3 {
-  color: #ffffff; /* White, bold and readable */
-}
-
-body.light-mode .project-card p {
-  color: white; /* Black text inside the box */
-}
-
-body.light-mode .btn-view {
-  background: #ffffff;
-  border: 2px solid #4b32c3;
-  color: #4b32c3; 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-body.light-mode .btn-view:hover {
-  background: #4b32c3;
-  color: #ffffff;
-}
-
-/* Dark Mode */
-body.dark-mode .project-card h3 {
-  color: #000000; /* Black bold headers */
-}
-
-body.dark-mode .project-card p {
-  color: black; /* White text */
-}
-
-body.dark-mode .btn-view {
-  background: #f5cd19;
-  color: #000000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-
-body.dark-mode .btn-view:hover {
-  background: #ffdd44;
-  color: #000000;
-}
-
-/* Project Grid Layout */
-.project-grid {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  align-items: stretch; /* makes all boxes equal height */
-}
-
-/* Each card */
-.project-card {
   flex: 1;
-  display: flex;
-  flex-direction: column; /* stack elements inside */
-  justify-content: space-between; /* push button to bottom */
-  background: linear-gradient(145deg, #6c5ce7, #5a4bdc);
-  border-radius: 18px;
-  padding: 15px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 350px; /* ensures all cards are same height */
+  color: inherit;
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-}
-
-/* Keep button at the bottom consistently */
-.project-card .btn-view {
-  margin-top: auto;
-}
-
-/* Projects Section Background (Light Mode) */
-body.light-mode #projects {
-  background-color: #ffffff; /* match exact background of portfolio header */
-}
-
-/* Preloader Container */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0d0d0d; /* dark background, you can use your theme color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* always on top */
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-/* Hide preloader when done */
-#preloader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-/* Dots Wrapper */
-#preloader .dots {
-  display: flex;
-  gap: 15px;
-}
-
-/* Each Dot */
-#preloader .dots span {
-  width: 18px;
-  height: 18px;
-  background: #6c5ce7; /* your theme blue */
-  border-radius: 50%;
-  display: inline-block;
-  animation: bounce 0.6s infinite alternate;
-}
-
-/* Delay each dot for wave effect */
-#preloader .dots span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-#preloader .dots span:nth-child(3) {
-  animation-delay: 0.4s;
-}
-#preloader .dots span:nth-child(4) {
-  animation-delay: 0.6s;
-}
-
-/* Bounce Animation */
-@keyframes bounce {
-  from {
-    transform: translateY(0);
-    opacity: 0.6;
-  }
-  to {
-    transform: translateY(-15px);
-    opacity: 1;
-  }
-}
-
-/* HERO SECTION FIX */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0 5%;
-  box-sizing: border-box;
-}
-
-/* Left side text */
-.hero-content {
-  flex: 1;
-  max-width: 50%;
-  text-align: left;
-
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.2s; /* slight delay */
+.hero-left h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--heading-color, #fff);
 }
 
 .hero-title {
   font-size: 2.5rem;
-  line-height: 3rem;
-  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.last-name {
+  color: var(--accent-color, #00aaff);
 }
 
 .hero-subtitle {
-  font-size: 1.3rem;
-  margin-bottom: 25px;
-
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.4s;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
 }
 
-/* Buttons */
+.hero-subtitle .static-text {
+  margin-right: 0.4rem;
+  opacity: 0.9;
+}
+
+/* ---------- Buttons ---------- */
 .hero-buttons {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.6s;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-/* Right side robot video */
-.hero-media {
+.btn {
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-color, #ff6a00);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background-color: var(--accent-hover, #ff8800);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-color, #fff);
+  border: 2px solid var(--accent-color, #ff6a00);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-color, #ff6a00);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ---------- Hero Right (Robot Video) ---------- */
+.hero-right {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 50%;
-
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.8s;
-}
-
-.hero-media video,
-.hero-media img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Responsive stacking for mobile */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 80px;
-  }
-
-  .hero-content, 
-  .hero-media {
-    max-width: 100%;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-    line-height: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .hero-media video,
-  .hero-media img {
-    width: 70%;
-    max-width: 280px;
-    margin-top: 20px;
-  }
-}
-
-/* KEYFRAMES for fade-in */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Default hidden state */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-/* When active */
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .robot-video {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.4));
+  transition: transform 0.6s ease;
 }
 
-/* =============================
-   BASE STYLES
-============================= */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
-  transition: background 0.3s, color 0.3s;
+.hero-right:hover .robot-video {
+  transform: scale(1.03);
 }
 
-/* Light & Dark Mode Variables */
-:root {
-  --bg-color: #f5f5f5;
-  --text-color: #111;
-  --dot-color: #111;
+/* ---------- Responsive Design ---------- */
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .hero-left {
+    flex: none;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-left h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .robot-video {
+    width: 80%;
+    max-width: 320px;
+  }
 }
 
-body.dark-mode {
-  --bg-color: #111;
-  --text-color: #f5f5f5;
-  --dot-color: #f5f5f5;
+@media (max-width: 600px) {
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-left h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-/* =============================
-   PRELOADER STYLES
-============================= */
-#preloader {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: var(--bg-color);
+/* ===============================
+   ABOUT SECTION
+================================== */
+.about {
+  padding: 6rem 0;
+  background: var(--section-bg, #f8f9fa);
+  color: var(--text-color, #333);
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1 1 55%;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--heading-color, #111);
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.about-text p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.about-stats .stat {
+  flex: 1 1 30%;
+  margin: 0.5rem;
+}
+
+.about-stats .counter {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color, #ff6a00);
+  transition: all 0.3s ease;
+}
+
+.about-img {
+  flex: 1 1 35%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
+.about-img img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about-img img {
+    max-width: 250px;
+  }
+
+  .about-stats {
+    justify-content: center;
+  }
+}
+
+/* ===============================
+   PRELOADER (Light/Dark Adaptive)
+================================== */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--preloader-bg, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.loader .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--dot-color, #000);
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.loader .dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.loader .dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.loader .dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.loader .dot:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hide preloader when done */
 #preloader.fade-out {
   opacity: 0;
   visibility: hidden;
 }
 
-/* Bubbling dots container */
-.dots {
+/* === Dark Mode Support === */
+body.dark-mode #preloader {
+  --preloader-bg: #0a0a0a;
+  --dot-color: #fff;
+}
+
+/* === Light Mode === */
+body.light-mode #preloader {
+  --preloader-bg: #fff;
+  --dot-color: #000;
+}
+
+/* ===============================
+   PRELOADER (Light/Dark Adaptive)
+================================== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--preloader-bg, #fff);
   display: flex;
-  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
-.dots span {
-  width: 14px;
-  height: 14px;
-  background: var(--dot-color);
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.loader .dot {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  display: inline-block;
-  animation: bounce 0.6s infinite alternate;
+  background-color: var(--dot-color, #000);
+  animation: bounce 1.2s infinite ease-in-out;
 }
 
-/* Sequential animation delay */
-.dots span:nth-child(1) { animation-delay: 0s; }
-.dots span:nth-child(2) { animation-delay: 0.2s; }
-.dots span:nth-child(3) { animation-delay: 0.4s; }
-.dots span:nth-child(4) { animation-delay: 0.6s; }
+.loader .dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.loader .dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.loader .dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.loader .dot:nth-child(4) {
+  animation-delay: 0.45s;
+}
 
 @keyframes bounce {
-  from { transform: translateY(0); opacity: 0.6; }
-  to   { transform: translateY(-12px); opacity: 1; }
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-/* =============================
-   HEADER EXAMPLE
-============================= */
-header {
-  padding: 2rem;
-  text-align: center;
+/* Fade-out when loaded */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
 }
 
-button#theme-toggle {
+/* Dark Mode Support */
+body.dark-mode #preloader {
+  --preloader-bg: #0a0a0a;
+  --dot-color: #fff;
+}
+
+/* Light Mode */
+body.light-mode #preloader {
+  --preloader-bg: #fff;
+  --dot-color: #6c5ce7;
+}
+
+/* 🌙 Dark Mode: Make "Services" header white */
+body.dark-mode .section-title,
+body.dark-mode .services h2,
+body.dark-mode #services h2 {
+  color: #ffffff;
+}
+
+/* 🧩 Service Box Styling */
+.service-box {
+  border-radius: 15px; /* curved corners */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* 💡 Light Mode Appearance */
+body.light-mode .service-box {
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 🌙 Dark Mode Appearance */
+body.dark-mode .service-box {
+  background: rgba(25, 25, 25, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* ✨ Hover Effect for Both Modes */
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 🌟 "Most Popular" Badge Glow (Dark Mode Only) */
+body.dark-mode .most-popular {
+  background-color: #ffca28; /* soft golden yellow */
+  color: #000;
+  box-shadow: 0 0 15px 3px rgba(255, 202, 40, 0.5);
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Optional: subtle pulsing effect for the glow */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 12px 3px rgba(255, 202, 40, 0.4); }
+  50% { box-shadow: 0 0 18px 5px rgba(255, 202, 40, 0.7); }
+  100% { box-shadow: 0 0 12px 3px rgba(255, 202, 40, 0.4); }
+}
+
+body.dark-mode .most-popular {
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+/* SERVICE BOXES BASE STYLE */
+.service-box {
+  border-radius: 15px;
+  background: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.08); /* <-- visible static border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* subtle depth */
+  transition: all 0.3s ease;
+}
+
+/* LIGHT MODE STYLE */
+body.light-mode .service-box {
+  background: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* DARK MODE STYLE */
+body.dark-mode .service-box {
+  background: rgba(25, 25, 25, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* HOVER EFFECT */
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* SERVICE HEADER IN DARK MODE */
+body.dark-mode #services h2 {
+  color: #ffffff;
+}
+
+/* "MOST POPULAR" BADGE WITH GLOW */
+body.dark-mode .most-popular {
+  background-color: #ffca28;
+  color: #000;
+  box-shadow: 0 0 15px 3px rgba(255, 202, 40, 0.5);
+  border-radius: 20px;
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 12px 3px rgba(255, 202, 40, 0.4); }
+  50% { box-shadow: 0 0 18px 5px rgba(255, 202, 40, 0.7); }
+  100% { box-shadow: 0 0 12px 3px rgba(255, 202, 40, 0.4); }
+}
+
+/* ========== HERO GREETING STYLING ========== */
+#greeting {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Wave emoji animation */
+.wave {
+  display: inline-block;
+  animation: waveHand 2s infinite ease-in-out;
+}
+
+@keyframes waveHand {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Subtext showing local time */
+#time-info {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-top: 5px;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: color 0.3s ease;
+}
+
+/* Theme variables */
+body.light-mode {
+  --heading-color: #111;
+  --text-color: #333;
+}
+
+body.dark-mode {
+  --heading-color: #fff;
+  --text-color: #ccc;
+}
+
+/* Default color for dark mode (leave as it is now) */
+.last-name {
+  color: var(--accent-color); /* or your existing color */
+  transition: color 0.3s ease;
+}
+
+/* Light mode: Make Ogbonnaya pure white */
+body.light-mode .last-name {
+  color: #ffffff !important;
+}
+
+/* === Fancy Scroll Button === */
+.scroll-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
   border: none;
-  background: none;
-  font-size: 1.5rem;
+  border-radius: 50%;
   cursor: pointer;
-  margin-top: 1rem;
+  outline: none;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #fff;
+  transition: all 0.4s ease;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.5), 0 0 30px rgba(0, 180, 255, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Glowing pulse effect */
+.scroll-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  filter: blur(15px);
+  opacity: 0.6;
+  z-index: -1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+/* Hover interaction */
+.scroll-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(0, 180, 255, 0.9), 0 0 45px rgba(0, 180, 255, 0.5);
+}
+
+/* Arrow animation */
+.scroll-btn .arrow {
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.scroll-btn.up .arrow {
+  transform: rotate(180deg);
+}
+
+/* Hide button initially */
+.scroll-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+/* Dark mode style */
+body.dark-mode .scroll-btn {
+  background: linear-gradient(135deg, #ff9900, #ff6600);
+  box-shadow: 0 0 15px rgba(255, 128, 0, 0.5), 0 0 30px rgba(255, 128, 0, 0.2);
+}
+
+body.dark-mode .scroll-btn:hover {
+  box-shadow: 0 0 25px rgba(255, 165, 0, 0.9), 0 0 45px rgba(255, 140, 0, 0.5);
+}
+
+/* ===== Scroll Button Styling ===== */
+.scroll-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #00aaff, #0077ff);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-button.show {
+  opacity: 1;
+  visibility: visible;
+  animation: bounceIn 0.5s ease forwards;
+}
+
+.scroll-button:hover {
+  transform: scale(1.1) rotate(10deg);
+  background: linear-gradient(135deg, #0077ff, #00aaff);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+}
+
+/* Arrow rotation when direction changes */
+.scroll-button.down .arrow {
+  transform: rotate(180deg);
+}
+
+/* Arrow animation */
+.arrow {
+  transition: transform 0.4s ease;
+}
+
+/* Keyframes for entrance animation */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Dark mode support */
+body.dark-mode .scroll-button {
+  background: linear-gradient(135deg, #ff6600, #ff3300);
+  box-shadow: 0 8px 25px rgba(255, 102, 0, 0.3);
+}
+
+body.dark-mode .scroll-button:hover {
+  background: linear-gradient(135deg, #ff3300, #ff6600);
+}
+
+/* ===== Scroll Button (Section by Section) ===== */
+#scroll-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #0078ff, #00c6ff);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+}
+
+#scroll-button.show {
+  opacity: 1;
+  visibility: visible;
+  animation: bounceIn 0.5s ease forwards;
+}
+
+#scroll-button:hover {
+  transform: scale(1.15) rotate(8deg);
+  background: linear-gradient(135deg, #00c6ff, #0078ff);
+  box-shadow: 0 12px 30px rgba(0, 119, 255, 0.3);
+}
+
+/* Arrow flip for up mode */
+#scroll-button.up .arrow {
+  transform: rotate(180deg);
+}
+
+.arrow {
+  transition: transform 0.4s ease;
+}
+
+/* Small bounce entrance */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ✨ Light & Dark mode glow */
+body.light-mode #scroll-button {
+  box-shadow: 0 0 15px rgba(0, 150, 255, 0.4);
+}
+
+body.dark-mode #scroll-button {
+  background: linear-gradient(135deg, #ff6600, #ff3300);
+  box-shadow: 0 0 15px rgba(255, 100, 0, 0.4);
+}
+
+body.dark-mode #scroll-button:hover {
+  background: linear-gradient(135deg, #ff3300, #ff6600);
+}
+
+/* ===== HERO SECTION BASE ===== */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 8%;
+  background: var(--hero-bg, transparent);
+  transition: background 0.4s ease;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ===== LEFT TEXT ===== */
+.hero-left {
+  flex: 1;
+  z-index: 2;
+}
+
+#greet-text {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.last-name {
+  color: var(--accent-color, #ff6600);
+  font-weight: 800;
+  transition: color 0.3s ease;
+}
+
+/* Only on light mode — make Ogbonnaya pure white */
+body:not(.dark-mode) .last-name {
+  color: #ffffff;
+}
+
+/* ===== SUBTITLE ===== */
+.hero-subtitle {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: var(--text-muted, #666);
+}
+
+.static-text {
+  margin-right: 5px;
+  font-weight: 500;
+}
+
+/* ===== BUTTONS ===== */
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.hero-buttons .btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-color, #ff6600);
+  border: 2px solid var(--accent-color, #ff6600);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-color, #ff6600);
+  color: #fff;
+}
+
+/* ===== RIGHT VIDEO ===== */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.robot-video {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-left {
+    order: 1;
+  }
+
+  .hero-right {
+    order: 2;
+  }
+
+  .robot-video {
+    max-width: 320px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 60px 6%;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .robot-video {
+    max-width: 280px;
+  }
+}
+
+/* ===============================
+   HERO SECTION TEXT + COLOR FIX
+   =============================== */
+
+/* Default Light Mode Variables */
+:root {
+  --bg-color: #7072e9;
+  --heading-color: #000000;
+  --text-color: #333333;
+  --accent-color: #ff7b00; /* Highlight color for light mode */
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --bg-color: #000000;
+  --heading-color: #ffffff;
+  --text-color: #dddddd;
+  --accent-color: #ffffff; /* Ogbonnaya white in dark mode */
+}
+
+/* Hero Container */
+.hero {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 100px 8%;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* LEFT: Text Section */
+.hero-left {
+  flex: 1 1 450px;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.hero-left h1#greeting {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.hero-left h2.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.hero-left .last-name {
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 10px 0 25px;
+  color: var(--text-color);
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-buttons .btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+  background: #007bff;
+  color: #fff;
+}
+
+.hero-buttons .btn-primary:hover {
+  background: #0056b3;
+}
+
+.hero-buttons .btn-secondary {
+  background: transparent;
+  border: 2px solid #ff7b00;
+  color: #ff7b00;
+}
+
+.hero-buttons .btn-secondary:hover {
+  background: #ff7b00;
+  color: #fff;
+}
+
+/* RIGHT: Robot Video */
+.hero-right {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.robot-video {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN (Mobile)
+   =============================== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 80px 5%;
+  }
+
+  .hero-left h1#greeting {
+    font-size: 1.4rem;
+  }
+
+  .hero-left h2.hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .robot-video {
+    width: 260px;
+    margin-bottom: 25px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left h2.hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-left h1#greeting {
+    font-size: 1.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .robot-video {
+    width: 230px;
+  }
+}
+
+/* Light mode (default) */
+body:not(.dark-mode) .hero h1 span.lastname {
+  color: #000 !important; /* Black for Ogbonnaya */
+}
+
+body:not(.dark-mode) .hero .intro-text {
+  color: #000 !important; /* Black for "I'm into..." */
+}
+
+body:not(.dark-mode) .hero h1 span.firstname {
+  color: #000 !important; /* Black for Victor */
+}
+
+body:not(.dark-mode) .hero .greeting {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333 !important; /* Dark gray for Hi, Good Evening */
+}
+
+/* Dark mode */
+body.dark-mode .hero h1 span.lastname {
+  color: #fff !important;
+}
+
+body.dark-mode .hero .intro-text {
+  color: #fff !important;
+}
+
+body.dark-mode .hero h1 span.firstname {
+  color: #fff !important;
+}
+
+body.dark-mode .hero .greeting {
+  color: #fff !important;
+}
+
+/* --------------------------------------------- */
+/* 🩵 FIX HERO TEXT COLOR + MOBILE RESPONSIVENESS */
+/* --------------------------------------------- */
+
+/* Text color transitions */
+.hero-section #greet-text,
+.hero-section .hero-title,
+.hero-section .hero-subtitle,
+.hero-section .hero-subtitle .static-text,
+.hero-section .hero-subtitle #role {
+  transition: color 0.3s ease;
+}
+
+/* Light mode (default) */
+body:not(.dark-mode) .hero-section #greet-text,
+body:not(.dark-mode) .hero-section .hero-title,
+body:not(.dark-mode) .hero-section .hero-subtitle,
+body:not(.dark-mode) .hero-section .hero-subtitle .static-text,
+body:not(.dark-mode) .hero-section .hero-subtitle #role {
+  color: #111 !important; /* dark gray for better contrast */
+}
+
+/* Dark mode */
+body.dark-mode .hero-section #greet-text,
+body.dark-mode .hero-section .hero-title,
+body.dark-mode .hero-section .hero-subtitle,
+body.dark-mode .hero-section .hero-subtitle .static-text,
+body.dark-mode .hero-section .hero-subtitle #role {
+  color: #fff !important; /* white text for dark mode */
+}
+
+/* Ensure video does not overlap text */
+.hero-section .hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Keep left (text) and right (robot video) aligned on desktop */
+.hero-left {
+  flex: 1;
+  min-width: 280px;
+  z-index: 2;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The robot video should never double or stretch weirdly */
+.robot-video {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 🧩 MOBILE VIEW FIX — neat stacking (text on top, video below) */
+@media (max-width: 768px) {
+  .hero-section .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .hero-left {
+    order: 1;
+    width: 100%;
+  }
+
+  .hero-right {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .robot-video {
+    max-width: 260px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+/* 🎬 Background video fixes */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* ensures it stays behind text */
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* hide the inactive video so it doesn’t overlap */
+.light-mode-bg,
+.dark-mode-bg {
+  display: none;
+}
+
+body:not(.dark-mode) .light-mode-bg {
+  display: block;
+}
+
+body.dark-mode .dark-mode-bg {
+  display: block;
+}
+
+/* 🧠 Ensure hero text and robot video are visible above */
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Robot video (right side) alignment */
+.robot-video {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
