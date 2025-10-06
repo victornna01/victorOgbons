@@ -103,44 +103,71 @@ document.addEventListener('DOMContentLoaded', function() {
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 
-// Check saved theme on page load
-if (localStorage.getItem("theme") === "dark") {
+// Video background references
+const lightVideo = document.querySelector(".light-mode-bg");
+const darkVideo = document.querySelector(".dark-mode-bg");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
   body.classList.add("dark-mode");
-  body.classList.remove("light-mode");
-  if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  if (lightVideo) lightVideo.style.display = "none";
+  if (darkVideo) darkVideo.style.display = "block";
 } else {
-  body.classList.add("light-mode");
   body.classList.remove("dark-mode");
-  if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  if (lightVideo) lightVideo.style.display = "block";
+  if (darkVideo) darkVideo.style.display = "none";
 }
 
 // Toggle theme on click
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
 
-    if (body.classList.contains("dark-mode")) {
-  body.classList.remove("light-mode");
-  if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-  localStorage.setItem("theme", "dark");
-} else {
-  body.classList.add("light-mode");
-  if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-  localStorage.setItem("theme", "light");
-}
+  const isDark = body.classList.contains("dark-mode");
+  themeToggle.innerHTML = isDark
+    ? '<i class="fas fa-sun"></i>'
+    : '<i class="fas fa-moon"></i>';
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  // Switch background videos
+  if (lightVideo && darkVideo) {
+    lightVideo.style.display = isDark ? "none" : "block";
+    darkVideo.style.display = isDark ? "block" : "none";
+  }
+});
+
+// 🍔 Mobile Menu Toggle
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+const overlay = document.getElementById("overlay");
+
+if (hamburger && navMenu && overlay) {
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("active");
+    overlay.classList.toggle("active");
+  });
+
+  overlay.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+    hamburger.classList.remove("active");
+    overlay.classList.remove("active");
   });
 }
 
-
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-const overlay = document.getElementById('overlay');
-
-hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-  hamburger.classList.toggle('active');
-  overlay.classList.toggle('active');
-});
+// 🧠 Hero Section Robot Video Fix — ensures only one plays
+const robotVideo = document.getElementById("robot-video");
+if (robotVideo) {
+  robotVideo.addEventListener("loadeddata", () => {
+    robotVideo.play().catch(() => {});
+  });
+  robotVideo.loop = true;
+  robotVideo.muted = true;
+  robotVideo.play();
+}
 
 // Close when overlay is clicked
 overlay.addEventListener('click', () => {
@@ -238,180 +265,91 @@ document.addEventListener("DOMContentLoaded", function () {
   serviceHeadings.forEach(h => h.style.color = "#000");
 });
 
-// Counter Animation
-const counters = document.querySelectorAll('.counter');
-const speed = 200; // lower = faster
-
-const animateCounters = () => {
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText;
-
-      const increment = Math.ceil(target / speed);
-
-      if (count < target) {
-        counter.innerText = count + increment;
-        setTimeout(updateCount, 20);
-      } else {
-        counter.innerText = target;
-      }
-    };
-
-    updateCount();
-  });
-};
-
-// Trigger when section is visible
-const statsSection = document.querySelector('.about'); // or .stats if you wrapped them
-let statsPlayed = false;
-
-window.addEventListener('scroll', () => {
-  const sectionTop = statsSection.offsetTop - window.innerHeight + 100;
-  if (!statsPlayed && window.scrollY > sectionTop) {
-    animateCounters();
-    statsPlayed = true;
-  }
-});
-
-// TYPEWRITER / ROLE CYCLER
-document.addEventListener("DOMContentLoaded", () => {
-  const roles = [
-    "Creative Web Developer",
-    "UI/UX Designer",
-    "Backend Engineer",
-    "Fullstack Enthusiast"
-  ];
-  const roleElement = document.getElementById("role");
-  let roleIndex = 0;
-
-  function animateRole() {
-    const currentRole = roles[roleIndex];
-    roleElement.textContent = currentRole;
-    roleElement.style.opacity = "0";
-    requestAnimationFrame(() => { roleElement.style.opacity = "1"; });
-    setTimeout(() => {
-      roleElement.style.opacity = "0";
-      setTimeout(() => {
-        roleIndex = (roleIndex + 1) % roles.length;
-        animateRole();
-      }, 600);
-    }, 3000);
-  }
-
-  if (roleElement) {
-    roleElement.style.transition = "opacity 0.6s ease-in-out";
-    animateRole();
-  }
-});
-
-  function updateGreeting() {
-    const greeting = document.getElementById("greeting");
-    const now = new Date();
-    const hour = now.getHours();
-
-    let message = "Hi, Good Day.";
-
-    if (hour >= 0 && hour < 12) {
-      message = "Hi, Good Morning.";
-    } else if (hour >= 12 && hour < 16) {
-      message = "Hi, Good Afternoon.";
-    } else if (hour >= 16 && hour < 24) {
-      message = "Hi, Good Evening.";
-    }
-
-    greeting.textContent = message;
-  }
-
-  // Run immediately
-  updateGreeting();
-
-  // Update every minute (in case time changes)
-  setInterval(updateGreeting, 60000);
-
-// SCROLL BUTTON (section by section)
-const scrollBtn = document.getElementById("scrollBtn");
-const sections = document.querySelectorAll("section");
-let currentSection = 0;
-
-window.addEventListener("scroll", () => {
-  const windowHeight = window.innerHeight;
-
-  sections.forEach((sec, index) => {
-    const rect = sec.getBoundingClientRect();
-    if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
-      currentSection = index;
-    }
-  });
-
-  if (window.scrollY > 100) {
-    scrollBtn.classList.add("show");
-  } else {
-    scrollBtn.classList.remove("show");
-  }
-
-  if (currentSection >= sections.length - 1) {
-    scrollBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-  } else {
-    scrollBtn.innerHTML = '<i class="fas fa-chevron-down"></i>';
-  }
-});
-
-scrollBtn.addEventListener("click", () => {
-  if (currentSection >= sections.length - 1) {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  } else {
-    const nextSection = sections[currentSection + 1];
-    nextSection.scrollIntoView({ behavior: "smooth" });
-  }
-});
-
-// Scroll animation for project cards
-document.addEventListener("DOMContentLoaded", () => {
-  const projectCards = document.querySelectorAll(".project-card");
-
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target); // animate once
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  projectCards.forEach(card => {
-    observer.observe(card);
-  });
-});
-
-  // Reveal sections on scroll
-  const reveals = document.querySelectorAll(".reveal");
-
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target); // only animate once
-      }
-    });
-  }, { threshold: 0.2 });
-
-  reveals.forEach(reveal => {
-    appearOnScroll.observe(reveal);
-  });
-
-// =============================
-// PRELOADER (4 bouncing dots)
-// =============================
+// ===============================
+// PRELOADER ANIMATION
+// ===============================
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
+  setTimeout(() => {
+    preloader.classList.add("fade-out");
+  }, 500); // small delay for smooth fade
+});
+
+// ===============================
+// PRELOADER (4 bouncing dots)
+// ===============================
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+
   if (preloader) {
+    // Wait a bit for smooth fade
     setTimeout(() => {
-      preloader.classList.add("hidden");
-    }, 1000); // 1s delay before fade out
+      preloader.classList.add("fade-out");
+    }, 700); // Adjust timing for your liking
   }
 });
 
+// 🕒 Dynamic Greeting Based on Time
+document.addEventListener("DOMContentLoaded", () => {
+  const greetText = document.getElementById("greet-text");
+  const timeInfo = document.getElementById("time-info");
+
+  function updateGreeting() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+
+    let greeting = "";
+    if (hours >= 0 && hours < 12) {
+      greeting = "Good Morning";
+    } else if (hours >= 12 && hours < 16) {
+      greeting = "Good Afternoon";
+    } else {
+      greeting = "Good Evening";
+    }
+
+    if (greetText) greetText.textContent = `Hi, ${greeting}`;
+  }
+
+  updateGreeting();
+  setInterval(updateGreeting, 60000); // update every minute
+});
+
+// ===============================
+// 🚀 Scroll Button (Section-by-Section Scroll)
+// ===============================
+const scrollButton = document.getElementById("scroll-button");
+const sections = document.querySelectorAll("section");
+let currentIndex = 0;
+
+// Show the button after some scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    scrollButton.classList.add("show");
+  } else {
+    scrollButton.classList.remove("show");
+  }
+
+  // If we are near bottom → switch to UP arrow
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+    scrollButton.classList.add("up");
+  } else {
+    scrollButton.classList.remove("up");
+  }
+});
+
+// Scroll section by section
+scrollButton.addEventListener("click", () => {
+  if (scrollButton.classList.contains("up")) {
+    // Back to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    currentIndex = 0;
+  } else {
+    currentIndex++;
+    if (currentIndex < sections.length) {
+      sections[currentIndex].scrollIntoView({ behavior: "smooth" });
+    } else {
+      scrollButton.classList.add("up");
+    }
+  }
+});
